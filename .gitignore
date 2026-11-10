@@ -1,0 +1,15 @@
+# data (public NHANES, re-downloadable; never commit raw or processed data)
+data/raw/*
+data/processed/*
+!data/raw/2017-2020/.gitkeep
+!data/raw/2021-2023/.gitkeep
+!data/processed/.gitkeep
+# python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+# OS / editor
+.DS_Store
+.idea/
