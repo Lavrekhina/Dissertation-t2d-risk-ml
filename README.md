@@ -1,6 +1,6 @@
 # Machine learning for type 2 diabetes risk prediction (NHANES)
 
-BSc Computer Science dissertation project (Sofia Lavrekhina).
+BSc Computer Science dissertation project Sofia Lavrekhina.
 Predicts laboratory-defined diabetes (HbA1c >= 6.5 %) from health, lifestyle and dietary
 data, compares four models (elastic-net logistic regression, random forest, XGBoost,
 LightGBM), runs a feature-group ablation and tests how stable SHAP explanations are.
