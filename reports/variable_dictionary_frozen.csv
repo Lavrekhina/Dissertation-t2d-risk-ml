@@ -1,0 +1,516 @@
+variable,label,file,group,role,in_2017-2020,pct_missing_2017-2020,in_2021-2023,pct_missing_2021-2023,in_all_cycles,flags,keep,derived_feature,notes
+AIALANGA,Language of ACASI Interview,DEMO,demographic,feature_candidate,True,29.9,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+DMDBORN4,Country of birth,DEMO,demographic,feature_candidate,True,0.0,True,0.2,True,,yes,born_in_us,Recode 77/99 to missing
+DMDEDUC2,Education level - Adults 20+,DEMO,demographic,feature_candidate,True,0.0,True,0.2,True,,yes,education,Recode 7/9 (refused / don't know) to missing
+DMDHHSIZ,Total number of people in the Household,DEMO,demographic,feature_candidate,False,,True,0.0,False,not in 2017-2020,no,,Only in 2021-2023
+DMDHRAGZ,HH ref persons age in years,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+DMDHREDZ,HH ref persons education level,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+DMDHRGND,HH ref persons gender,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+DMDHRMAZ,HH ref persons marital status,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+DMDHSEDZ,HH ref persons spouses education level,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+DMDMARTZ,Marital status,DEMO,demographic,feature_candidate,True,0.0,True,0.2,True,,yes,marital_status,Recode 77/99 to missing
+DMDYRUSR,Length of time in US,DEMO,demographic,feature_candidate,False,,True,79.8,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Renamed between cycles and >70% missing (asked only of people born outside the US)
+DMDYRUSZ,Length of time in US,DEMO,demographic,feature_candidate,True,71.1,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Renamed between cycles and >70% missing (asked only of people born outside the US)
+DMQMILIZ,Served active duty in US Armed Forces,DEMO,demographic,feature_candidate,False,,True,0.2,False,not in 2017-2020,no,,Only in 2021-2023
+FIAINTRP,Interpreter used in Family Interview?,DEMO,demographic,feature_candidate,True,7.5,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+FIALANG,Language of Family Interview,DEMO,demographic,feature_candidate,True,7.5,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+FIAPROXY,Proxy used in Family Interview?,DEMO,demographic,feature_candidate,True,7.5,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+INDFMPIR,Ratio of family income to poverty,DEMO,demographic,feature_candidate,True,15.2,True,16.9,True,,yes,income_poverty_ratio,15-17% missing; impute in-fold
+MIAINTRP,Interpreter used in MEC Interview?,DEMO,demographic,feature_candidate,True,13.3,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+MIALANG,Language of MEC Interview,DEMO,demographic,feature_candidate,True,13.3,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+MIAPROXY,Proxy used in MEC Interview?,DEMO,demographic,feature_candidate,True,13.3,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+RIAGENDR,Gender,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,yes,sex,
+RIDAGEMN,Age in months at screening - 0 to 24 mos,DEMO,demographic,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+RIDAGEYR,Age in years at screening,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,yes,age,Also used for the adult (20+) filter
+RIDEXAGM,Age in months at exam - 0 to 19 years,DEMO,demographic,feature_candidate,False,,True,100.0,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Child-only or household-reference-person items
+RIDEXMON,Six month time period,DEMO,demographic,feature_candidate,True,7.5,True,22.3,True,label differs between cycles: Six month time period | Six-month time period,no,,"Season of exam; survey logistics, not a risk factor"
+RIDEXPRG,Pregnancy status at exam,DEMO,demographic,feature_candidate,True,79.7,True,80.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,filter,,Exclude pregnant women (RIDEXPRG = 1): pregnancy changes HbA1c. Missing for men/older women by design
+RIDRETH1,Race/Hispanic origin,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,no,,Duplicate of RIDRETH3 with fewer categories
+RIDRETH3,Race/Hispanic origin w/ NH Asian,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,yes,race_ethnicity,Chosen over RIDRETH1 because it separates non-Hispanic Asian
+RIDSTATR,Interview/Examination status,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,filter,,Keep RIDSTATR = 2 (interviewed and examined)
+SDDSRVYR,Data release cycle,DEMO,demographic,feature_candidate,True,0.0,True,0.0,True,,no,,Cycle code; the pipeline adds its own 'cycle' column
+SDMVPSU,Masked variance pseudo-PSU,DEMO,demographic,design,True,0.0,True,0.0,True,,design,,Survey design variables for the weighted sensitivity analysis
+SDMVSTRA,Masked variance pseudo-stratum,DEMO,demographic,design,True,0.0,True,0.0,True,,design,,Survey design variables for the weighted sensitivity analysis
+SEQN,Respondent sequence number,DEMO,demographic,id,True,0.0,True,0.0,True,,id,,Participant ID; merge key
+SIAINTRP,Interpreter used in SP Interview?,DEMO,demographic,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+SIALANG,Language of SP Interview,DEMO,demographic,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+SIAPROXY,Proxy used in SP Interview?,DEMO,demographic,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Interview administration; only in 2017-2020
+WTINT2YR,Full sample 2-year interview weight,DEMO,demographic,weight,False,,True,0.0,False,not in 2017-2020,no,,Interview weight; not needed because the cohort is examined adults
+WTINTPRP,Full sample interview weight,DEMO,demographic,weight,True,0.0,False,,False,not in 2021-2023,no,,Interview weight; not needed because the cohort is examined adults
+WTMEC2YR,Full sample 2-year MEC exam weight,DEMO,demographic,weight,False,,True,0.0,False,not in 2017-2020,weight,wt_mec,"MEC exam weight; renamed between cycles (PRP = 2017-2020, 2YR = 2021-2023). Harmonise to one column in T03"
+WTMECPRP,Full sample MEC exam weight,DEMO,demographic,weight,True,0.0,False,,False,not in 2021-2023,weight,wt_mec,"MEC exam weight; renamed between cycles (PRP = 2017-2020, 2YR = 2021-2023). Harmonise to one column in T03"
+BMDBMIC,BMI Category - Children/Youth,BMX,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Infant/child measures; 100% missing in adults
+BMDSTATS,Body Measures Component Status Code,BMX,clinical,feature_candidate,True,7.5,True,22.3,True,,no,,Status/comment codes
+BMIARMC,Arm Circumference Comment,BMX,clinical,feature_candidate,True,97.2,True,98.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIARML,Upper Arm Length Comment,BMX,clinical,feature_candidate,True,97.2,True,98.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIHEAD,Head Circumference Comment,BMX,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIHIP,Hip Circumference Comment,BMX,clinical,feature_candidate,True,96.3,True,96.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIHT,Standing Height Comment,BMX,clinical,feature_candidate,True,98.7,True,98.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMILEG,Upper Leg Length Comment,BMX,clinical,feature_candidate,True,95.7,True,95.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIRECUM,Recumbent Length Comment,BMX,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIWAIST,Waist Circumference Comment,BMX,clinical,feature_candidate,True,96.2,True,96.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMIWT,Weight Comment,BMX,clinical,feature_candidate,True,96.6,True,96.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Status/comment codes
+BMXARMC,Arm Circumference (cm),BMX,clinical,feature_candidate,True,11.8,True,24.6,True,,no,,Limb measures; outside the planned clinical set
+BMXARML,Upper Arm Length (cm),BMX,clinical,feature_candidate,True,11.8,True,24.5,True,,no,,Limb measures; outside the planned clinical set
+BMXBMI,Body Mass Index (kg/m**2),BMX,clinical,feature_candidate,True,9.2,True,23.5,True,,yes,bmi,
+BMXHEAD,Head Circumference (cm),BMX,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Infant/child measures; 100% missing in adults
+BMXHIP,Hip Circumference (cm),BMX,clinical,feature_candidate,True,12.6,True,27.0,True,,derive,waist_hip_ratio,Waist / hip; check VIF against waist and BMI in EDA
+BMXHT,Standing Height (cm),BMX,clinical,feature_candidate,True,9.1,True,23.2,True,,yes,height_cm,
+BMXLEG,Upper Leg Length (cm),BMX,clinical,feature_candidate,True,13.2,True,27.3,True,,no,,Limb measures; outside the planned clinical set
+BMXRECUM,Recumbent Length (cm),BMX,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Infant/child measures; 100% missing in adults
+BMXWAIST,Waist Circumference (cm),BMX,clinical,feature_candidate,True,12.7,True,26.2,True,,yes,waist_cm,
+BMXWT,Weight (kg),BMX,clinical,feature_candidate,True,9.0,True,23.4,True,,no,,Redundant: BMI and height together already encode weight
+BPAOARM,Arm selected - oscillometric,BPXO,clinical,feature_candidate,True,7.5,True,22.3,True,,no,,Measurement details
+BPAOCSZ,Coded cuff size - oscillometric,BPXO,clinical,feature_candidate,True,17.0,True,24.1,True,,no,,Measurement details
+BPXODI1,Diastolic - 1st oscillometric reading,BPXO,clinical,feature_candidate,True,17.2,True,24.9,True,,derive,dbp_mean,Mean of available diastolic readings
+BPXODI2,Diastolic - 2nd oscillometric reading,BPXO,clinical,feature_candidate,True,17.3,True,25.0,True,,derive,dbp_mean,Mean of available diastolic readings
+BPXODI3,Diastolic - 3rd oscillometric reading,BPXO,clinical,feature_candidate,True,17.5,True,25.2,True,,derive,dbp_mean,Mean of available diastolic readings
+BPXOPLS1,Pulse - 1st oscillometric reading,BPXO,clinical,feature_candidate,True,24.4,True,24.9,True,,derive,pulse_mean,Mean resting pulse
+BPXOPLS2,Pulse - 2nd oscillometric reading,BPXO,clinical,feature_candidate,True,24.5,True,25.0,True,,derive,pulse_mean,Mean resting pulse
+BPXOPLS3,Pulse - 3rd oscillometric reading,BPXO,clinical,feature_candidate,True,24.7,True,25.2,True,,derive,pulse_mean,Mean resting pulse
+BPXOSY1,Systolic - 1st oscillometric reading,BPXO,clinical,feature_candidate,True,17.2,True,24.9,True,,derive,sbp_mean,Mean of available systolic readings
+BPXOSY2,Systolic - 2nd oscillometric reading,BPXO,clinical,feature_candidate,True,17.3,True,25.0,True,,derive,sbp_mean,Mean of available systolic readings
+BPXOSY3,Systolic - 3rd oscillometric reading,BPXO,clinical,feature_candidate,True,17.5,True,25.2,True,,derive,sbp_mean,Mean of available systolic readings
+LBDHDD,Direct HDL-Cholesterol (mg/dL),HDL,clinical,feature_candidate,True,14.2,True,29.6,True,,yes,hdl_mg_dl,
+LBDHDDSI,Direct HDL-Cholesterol (mmol/L),HDL,clinical,feature_candidate,True,14.2,True,29.6,True,,no,,Same as LBDHDD in mmol/L
+WTPH2YR,Phlebotomy 2 Year Weight,HDL,clinical,weight,False,,True,22.3,False,not in 2017-2020,weight,wt_lab,2021-2023 phlebotomy weight; CDC recommends it for lab analytes (HbA1c) in that cycle. 2017-2020 uses WTMECPRP
+LBDTCSI,Total Cholesterol (mmol/L),TCHOL,clinical,feature_candidate,True,14.2,True,29.6,True,,no,,Same as LBXTC in mmol/L
+LBXTC,Total Cholesterol (mg/dL),TCHOL,clinical,feature_candidate,True,14.2,True,29.6,True,,yes,total_chol_mg_dl,Full MEC sample (replaces fasting-only TRIGLY/LDL)
+WTPH2YR,Phlebotomy 2 Year Weight,TCHOL,clinical,weight,False,,True,22.3,False,not in 2017-2020,weight,wt_lab,2021-2023 phlebotomy weight; CDC recommends it for lab analytes (HbA1c) in that cycle. 2017-2020 uses WTMECPRP
+DBD100,How often add salt to food at table,DR1TOT,diet,feature_candidate,True,41.9,True,54.5,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DBQ095Z,Type of table salt used,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1BWATZ,Total bottled water drank yesterday (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1DAY,Intake day of the week,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1DBIH,# of days b/w intake and HH interview,DR1TOT,diet,feature_candidate,True,20.4,True,41.9,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1DRSTZ,Dietary recall status,DR1TOT,diet,feature_candidate,True,7.5,True,22.3,True,,filter,,Day-1 recall valid only if = 1 (reliable). Day 1 is required for the diet features
+DR1EXMER,Interviewer ID code,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1HELP,Helped in responding for this interview,DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1LANG,Language respondent used mostly,DR1TOT,diet,feature_candidate,True,15.5,True,38.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1MRESP,Main respondent for this interview,DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1SKY,Type of salt used yesterday,DR1TOT,diet,feature_candidate,True,83.8,True,87.2,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1STY,Salt used at table yesterday?,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TACAR,Alpha-carotene (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TALCO,Alcohol (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,alcohol_g,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TATOA,Added alpha-tocopherol (Vitamin E) (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TATOC,Vitamin E as alpha-tocopherol (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TB12A,Added vitamin B12 (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TBCAR,Beta-carotene (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TCAFF,Caffeine (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,caffeine,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TCALC,Calcium (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,calcium,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TCARB,Carbohydrate (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,carbohydrate,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TCHL,Total choline (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TCHOL,Cholesterol (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,diet_cholesterol,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TCOPP,Copper (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TCRYP,Beta-cryptoxanthin (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TFA,Folic acid (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TFDFE,"Folate, DFE (mcg)",DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TFF,Food folate (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TFIBE,Dietary fiber (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,fibre,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TFOLA,Total folate (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TIRON,Iron (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TKCAL,Energy (kcal),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,energy_kcal,"Absolute energy; day 1, averaged with day 2 where available"
+DR1TLYCO,Lycopene (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TLZ,Lutein + zeaxanthin (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TM161,MFA 16:1 (Hexadecenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TM181,MFA 18:1 (Octadecenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TM201,MFA 20:1 (Eicosenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TM221,MFA 22:1 (Docosenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TMAGN,Magnesium (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,magnesium,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TMFAT,Total monounsaturated fatty acids (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,mufa,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TMOIS,Moisture (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TNIAC,Niacin (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TNUMF,Number of foods/beverages reported,DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP182,PFA 18:2 (Octadecadienoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP183,PFA 18:3 (Octadecatrienoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP184,PFA 18:4 (Octadecatetraenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP204,PFA 20:4 (Eicosatetraenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP205,PFA 20:5 (Eicosapentaenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP225,PFA 22:5 (Docosapentaenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TP226,PFA 22:6 (Docosahexaenoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TPFAT,Total polyunsaturated fatty acids (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,pufa,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TPHOS,Phosphorus (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TPOTA,Potassium (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,potassium,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TPROT,Protein (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,protein,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TRET,Retinol (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS040,SFA 4:0 (Butanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS060,SFA 6:0 (Hexanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS080,SFA 8:0 (Octanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS100,SFA 10:0 (Decanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS120,SFA 12:0 (Dodecanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS140,SFA 14:0 (Tetradecanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS160,SFA 16:0 (Hexadecanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TS180,SFA 18:0 (Octadecanoic) (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TSELE,Selenium (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TSFAT,Total saturated fatty acids (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,sat_fat,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TSODI,Sodium (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,sodium,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TSUGR,Total sugars (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,total_sugars,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TTFAT,Total fat (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,derive,total_fat,"Per 1,000 kcal; day 1, averaged with day 2 where available"
+DR1TTHEO,Theobromine (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVARA,"Vitamin A, RAE (mcg)",DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVB1,Thiamin (Vitamin B1) (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVB12,Vitamin B12 (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVB2,Riboflavin (Vitamin B2) (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVB6,Vitamin B6 (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVC,Vitamin C (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVD,Vitamin D (D2 + D3) (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TVK,Vitamin K (mcg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TWSZ,Tap water source,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1TZINC,Zinc (mg),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1_300,Compare food consumed yesterday to usual,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,filter,,"Intake vs usual (1 much more, 2 usual, 3 much less): flag for under/over-reporting check"
+DR1_320Z,Total plain water drank yesterday (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR1_330Z,Total tap water drank yesterday (gm),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRABF,Breast-fed infant (either day),DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD340,Shellfish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350A,Clams eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350AQ,# of times clams eaten in past 30 days,DR1TOT,diet,feature_candidate,True,94.8,True,97.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350B,Crabs eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350BQ,# of times crabs eaten in past 30 days,DR1TOT,diet,feature_candidate,True,90.7,True,94.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350C,Crayfish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350CQ,# of times crayfish eaten past 30 days,DR1TOT,diet,feature_candidate,True,98.5,True,99.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350D,Lobsters eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350DQ,# of times lobsters eaten past 30 days,DR1TOT,diet,feature_candidate,True,95.3,True,96.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350E,Mussels eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350EQ,# of times mussels eaten in past 30 days,DR1TOT,diet,feature_candidate,True,97.0,True,97.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350F,Oysters eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350FQ,# of times oysters eaten in past 30 days,DR1TOT,diet,feature_candidate,True,95.7,True,97.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350G,Scallops eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350GQ,# of times scallops eaten past 30 days,DR1TOT,diet,feature_candidate,True,94.8,True,95.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350H,Shrimp eaten during past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350HQ,# of times shrimp eaten in past 30 days,DR1TOT,diet,feature_candidate,True,61.4,True,72.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350I,Other shellfish eaten past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350IQ,# of times other shellfish eaten,DR1TOT,diet,feature_candidate,True,97.2,True,97.5,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350J,Other unknown shellfish eaten past 30 d,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350JQ,# of times other unknown shellfish eaten,DR1TOT,diet,feature_candidate,True,99.8,True,99.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD350K,Refused on shellfish eaten past 30 days,DR1TOT,diet,feature_candidate,True,56.2,True,68.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD360,Fish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370A,Breaded fish products eaten past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370AQ,# of times breaded fish products eaten,DR1TOT,diet,feature_candidate,True,93.3,True,93.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370B,Tuna eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370BQ,# of times tuna eaten in past 30 days,DR1TOT,diet,feature_candidate,True,78.1,True,79.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370C,Bass eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370CQ,# of times bass eaten in past 30 days,DR1TOT,diet,feature_candidate,True,98.5,True,99.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370D,Catfish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370DQ,# of times catfish eaten in past 30 days,DR1TOT,diet,feature_candidate,True,89.9,True,96.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370E,Cod eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370EQ,# of times cod eaten in past 30 days,DR1TOT,diet,feature_candidate,True,91.6,True,92.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370F,Flatfish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370FQ,# of times flatfish eaten past 30 days,DR1TOT,diet,feature_candidate,True,97.5,True,98.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370G,Haddock eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370GQ,# of times haddock eaten in past 30 days,DR1TOT,diet,feature_candidate,True,97.3,True,97.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370H,Mackerel eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370HQ,# of times mackerel eaten past 30 days,DR1TOT,diet,feature_candidate,True,98.5,True,99.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370I,Perch eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370IQ,# of times perch eaten in past 30 days,DR1TOT,diet,feature_candidate,True,97.8,True,99.2,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370J,Pike eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370JQ,# of times pike eaten in past 30 days,DR1TOT,diet,feature_candidate,True,99.9,True,99.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370K,Pollock eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370KQ,# of times pollock eaten in past 30 days,DR1TOT,diet,feature_candidate,True,98.0,True,98.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370L,Porgy eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370LQ,# of times porgy eaten in past 30 days,DR1TOT,diet,feature_candidate,True,99.7,True,99.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370M,Salmon eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370MQ,# of times salmon eaten in past 30 days,DR1TOT,diet,feature_candidate,True,77.5,True,78.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370N,Sardines eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370NQ,# of times sardines eaten past 30 days,DR1TOT,diet,feature_candidate,True,96.5,True,97.5,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370O,Sea bass eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370OQ,# of times sea bass eaten past 30 days,DR1TOT,diet,feature_candidate,True,98.8,True,99.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370P,Shark eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370PQ,# of times shark eaten in past 30 days,DR1TOT,diet,feature_candidate,True,99.9,True,99.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370Q,Swordfish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370QQ,# of times swordfish eaten past 30 days,DR1TOT,diet,feature_candidate,True,99.3,True,99.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370R,Trout eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370RQ,# of times trout eaten in past 30 days,DR1TOT,diet,feature_candidate,True,97.9,True,98.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370S,Walleye eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370SQ,# of times walleye eaten in past 30 days,DR1TOT,diet,feature_candidate,True,99.3,True,98.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370T,Other fish eaten during past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370TQ,# of times other fish eaten past 30 days,DR1TOT,diet,feature_candidate,True,86.9,True,89.5,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370U,Other unknown fish eaten in past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370UQ,# of times other unknown fish eaten,DR1TOT,diet,feature_candidate,True,96.7,True,98.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRD370V,Refused on fish eaten past 30 days,DR1TOT,diet,feature_candidate,True,42.6,True,56.4,True,>= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRDINT,Number of days of intake,DR1TOT,diet,feature_candidate,True,16.5,True,38.6,True,,filter,,Number of valid recall days (1 or 2); decides whether to average
+DRQSDIET,On special diet?,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT1,Weight loss/Low calorie diet,DR1TOT,diet,feature_candidate,True,92.5,True,94.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT10,High protein diet,DR1TOT,diet,feature_candidate,True,99.7,True,99.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT11,Gluten-free/Celiac diet,DR1TOT,diet,feature_candidate,True,99.8,True,99.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT12,Renal/Kidney diet,DR1TOT,diet,feature_candidate,True,99.8,True,99.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT2,Low fat/Low cholesterol diet,DR1TOT,diet,feature_candidate,True,98.5,True,99.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT3,Low salt/Low sodium diet,DR1TOT,diet,feature_candidate,True,98.1,True,98.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT4,Sugar free/Low sugar diet,DR1TOT,diet,feature_candidate,True,99.3,True,99.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT5,Low fiber diet,DR1TOT,diet,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT6,High fiber diet,DR1TOT,diet,feature_candidate,True,99.9,True,99.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT7,Diabetic diet,DR1TOT,diet,feature_candidate,True,97.6,True,98.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,LEAKAGE: 'diabetic diet' reveals known diabetes
+DRQSDT8,Weight gain/Muscle building diet,DR1TOT,diet,feature_candidate,True,99.8,True,99.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT9,Low carbohydrate diet,DR1TOT,diet,feature_candidate,True,98.4,True,99.1,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSDT91,Other special diet,DR1TOT,diet,feature_candidate,True,99.4,True,98.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Special-diet items: can reflect a diagnosis (leakage risk) and are mostly empty
+DRQSPREP,Salt used in preparation?,DR1TOT,diet,feature_candidate,True,15.6,True,38.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+WTDR2D,Dietary two-day sample weight,DR1TOT,diet,weight,False,,True,38.6,False,not in 2017-2020,weight,wt_diet2,Dietary two-day weight; renamed between cycles
+WTDR2DPP,Dietary two-day sample weight,DR1TOT,diet,weight,True,16.5,False,,False,not in 2021-2023,weight,wt_diet2,Dietary two-day weight; renamed between cycles
+WTDRD1,Dietary day one sample weight,DR1TOT,diet,weight,False,,True,22.3,False,not in 2017-2020,weight,wt_diet1,Dietary day-1 weight; renamed between cycles. Only needed for weighted diet summaries
+WTDRD1PP,Dietary day one sample weight,DR1TOT,diet,weight,True,7.5,False,,False,not in 2021-2023,weight,wt_diet1,Dietary day-1 weight; renamed between cycles. Only needed for weighted diet summaries
+DR2BWATZ,Total bottled water drank yesterday (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2DAY,Intake day of the week,DR2TOT,diet,feature_candidate,True,27.8,True,45.0,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2DBIH,# of days b/w intake and HH interview,DR2TOT,diet,feature_candidate,True,31.4,True,48.2,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2DRSTZ,Dietary recall status,DR2TOT,diet,feature_candidate,True,7.5,True,22.3,True,,filter,,Day-2 recall valid only if = 1 (reliable). Day 1 is required for the diet features
+DR2EXMER,Interviewer ID code,DR2TOT,diet,feature_candidate,True,27.8,True,45.0,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2HELP,Helped in responding for this interview,DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2LANG,Language respondent used mostly,DR2TOT,diet,feature_candidate,True,27.6,True,45.0,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2MRESP,Main respondent for this interview,DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2SKY,Type of salt used yesterday,DR2TOT,diet,feature_candidate,True,85.7,True,88.2,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2STY,Salt used at table yesterday?,DR2TOT,diet,feature_candidate,True,27.8,True,45.0,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TACAR,Alpha-carotene (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TALCO,Alcohol (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,alcohol_g,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TATOA,Added alpha-tocopherol (Vitamin E) (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TATOC,Vitamin E as alpha-tocopherol (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TB12A,Added vitamin B12 (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TBCAR,Beta-carotene (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TCAFF,Caffeine (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,caffeine,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TCALC,Calcium (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,calcium,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TCARB,Carbohydrate (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,carbohydrate,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TCHL,Total choline (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TCHOL,Cholesterol (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,diet_cholesterol,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TCOPP,Copper (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TCRYP,Beta-cryptoxanthin (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TFA,Folic acid (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TFDFE,"Folate, DFE (mcg)",DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TFF,Food folate (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TFIBE,Dietary fiber (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,fibre,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TFOLA,Total folate (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TIRON,Iron (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TKCAL,Energy (kcal),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,energy_kcal,"Absolute energy; day 2, averaged with day 1"
+DR2TLYCO,Lycopene (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TLZ,Lutein + zeaxanthin (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TM161,MFA 16:1 (Hexadecenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TM181,MFA 18:1 (Octadecenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TM201,MFA 20:1 (Eicosenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TM221,MFA 22:1 (Docosenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TMAGN,Magnesium (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,magnesium,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TMFAT,Total monounsaturated fatty acids (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,mufa,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TMOIS,Moisture (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TNIAC,Niacin (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TNUMF,Number of foods/beverages reported,DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP182,PFA 18:2 (Octadecadienoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP183,PFA 18:3 (Octadecatrienoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP184,PFA 18:4 (Octadecatetraenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP204,PFA 20:4 (Eicosatetraenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP205,PFA 20:5 (Eicosapentaenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP225,PFA 22:5 (Docosapentaenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TP226,PFA 22:6 (Docosahexaenoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TPFAT,Total polyunsaturated fatty acids (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,pufa,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TPHOS,Phosphorus (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TPOTA,Potassium (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,potassium,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TPROT,Protein (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,protein,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TRET,Retinol (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS040,SFA 4:0 (Butanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS060,SFA 6:0 (Hexanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS080,SFA 8:0 (Octanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS100,SFA 10:0 (Decanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS120,SFA 12:0 (Dodecanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS140,SFA 14:0 (Tetradecanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS160,SFA 16:0 (Hexadecanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TS180,SFA 18:0 (Octadecanoic) (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TSELE,Selenium (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TSFAT,Total saturated fatty acids (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,sat_fat,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TSODI,Sodium (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,sodium,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TSUGR,Total sugars (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,total_sugars,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TTFAT,Total fat (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,derive,total_fat,"Per 1,000 kcal; day 2, averaged with day 1"
+DR2TTHEO,Theobromine (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVARA,"Vitamin A, RAE (mcg)",DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVB1,Thiamin (Vitamin B1) (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVB12,Vitamin B12 (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVB2,Riboflavin (Vitamin B2) (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVB6,Vitamin B6 (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVC,Vitamin C (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVD,Vitamin D (D2 + D3) (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TVK,Vitamin K (mcg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TWSZ,Tap water source,DR2TOT,diet,feature_candidate,True,27.8,True,45.0,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2TZINC,Zinc (mg),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2_300,Compare food consumed yesterday to usual,DR2TOT,diet,feature_candidate,True,27.8,True,45.0,True,,filter,,"Intake vs usual (1 much more, 2 usual, 3 much less): flag for under/over-reporting check"
+DR2_320Z,Total plain water drank yesterday (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DR2_330Z,Total tap water drank yesterday (gm),DR2TOT,diet,feature_candidate,True,28.1,True,45.1,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRABF,Breast-fed infant (either day),DR2TOT,diet,feature_candidate,True,16.5,True,38.6,True,,no,,"Not in the core nutrient set (detail, correlated with totals, or recall metadata)"
+DRDINT,Number of days of intake,DR2TOT,diet,feature_candidate,True,16.5,True,38.6,True,,filter,,Number of valid recall days (1 or 2); decides whether to average
+WTDR2D,Dietary two-day sample weight,DR2TOT,diet,weight,False,,True,38.6,False,not in 2017-2020,weight,wt_diet2,Dietary two-day weight; renamed between cycles
+WTDR2DPP,Dietary two-day sample weight,DR2TOT,diet,weight,True,16.5,False,,False,not in 2021-2023,weight,wt_diet2,Dietary two-day weight; renamed between cycles
+WTDRD1,Dietary day one sample weight,DR2TOT,diet,weight,False,,True,22.3,False,not in 2017-2020,weight,wt_diet1,Dietary day-1 weight; renamed between cycles. Only needed for weighted diet summaries
+WTDRD1PP,Dietary day one sample weight,DR2TOT,diet,weight,True,7.5,False,,False,not in 2021-2023,weight,wt_diet1,Dietary day-1 weight; renamed between cycles. Only needed for weighted diet summaries
+PAD615,Minutes vigorous-intensity work,PAQ,lifestyle,feature_candidate,True,75.2,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAD630,Minutes moderate-intensity work,PAQ,lifestyle,feature_candidate,True,57.1,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAD645,Minutes walk/bicycle for transportation,PAQ,lifestyle,feature_candidate,True,77.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAD660,Minutes vigorous recreational activities,PAQ,lifestyle,feature_candidate,True,76.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+PAD675,Minutes moderate recreational activities,PAQ,lifestyle,feature_candidate,True,59.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+PAD680,Minutes sedentary activity,PAQ,lifestyle,feature_candidate,True,0.2,True,0.2,True,,yes,sedentary_min_day,Same question in both cycles; recode 7777/9999 to missing
+PAD790Q,Frequency of moderate LTPA,PAQ,lifestyle,feature_candidate,False,,True,0.2,False,not in 2017-2020,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAD790U,Moderate LTPA unit (day/week/month/year),PAQ,lifestyle,feature_candidate,False,,True,0.0,False,not in 2017-2020,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAD800,Minutes moderate LTPA,PAQ,lifestyle,feature_candidate,False,,True,22.0,False,not in 2017-2020,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAD810Q,Frequency of vigorous LTPA,PAQ,lifestyle,feature_candidate,False,,True,0.1,False,not in 2017-2020,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAD810U,Vigorous LTPA unit (day/week/month/year),PAQ,lifestyle,feature_candidate,False,,True,0.0,False,not in 2017-2020,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAD820,Minutes vigorous LTPA,PAQ,lifestyle,feature_candidate,False,,True,55.8,False,not in 2017-2020; >= 50% missing in 2021-2023,derive,leisure_mvpa_min_week,"2021-2023 redesigned questions: convert frequency + unit to times/week, x minutes; 0 if frequency = 0. Different wording from 2017-2020: state as a limitation of the temporal check"
+PAQ605,Vigorous work activity,PAQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ610,Number of days vigorous work,PAQ,lifestyle,feature_candidate,True,75.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ620,Moderate work activity,PAQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ625,Number of days moderate work,PAQ,lifestyle,feature_candidate,True,56.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ635,Walk or bicycle,PAQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ640,Number of days walk or bicycle,PAQ,lifestyle,feature_candidate,True,77.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Work and transport activity; not asked in 2021-2023
+PAQ650,Vigorous recreational activities,PAQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+PAQ655,Days vigorous recreational activities,PAQ,lifestyle,feature_candidate,True,76.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+PAQ665,Moderate recreational activities,PAQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+PAQ670,Days moderate recreational activities,PAQ,lifestyle,feature_candidate,True,59.8,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,derive,leisure_mvpa_min_week,2017-2020: days x minutes for vigorous + moderate recreation; 0 if PAQ650/PAQ665 = No. Count vigorous minutes x2 if using MET-weighting (state choice)
+SLD012,Sleep hours - weekdays or workdays,SLQ,lifestyle,feature_candidate,True,0.9,True,1.4,True,,derive,sleep_hours,Weekly average = (5 x weekday + 2 x weekend) / 7
+SLD013,Sleep hours - weekends,SLQ,lifestyle,feature_candidate,True,1.0,True,1.4,True,,derive,sleep_hours,Weekly average = (5 x weekday + 2 x weekend) / 7
+SLQ030,How often do you snore?,SLQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Only in 2017-2020
+SLQ040,How often do you snort or stop breathing,SLQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Only in 2017-2020
+SLQ050,Ever told doctor had trouble sleeping?,SLQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Only in 2017-2020
+SLQ120,How often feel overly sleepy during day?,SLQ,lifestyle,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Only in 2017-2020
+SLQ300,Usual sleep time on weekdays or workdays,SLQ,lifestyle,feature_candidate,True,0.0,True,0.0,True,,no,,Clock times; sleep duration already captured
+SLQ310,Usual wake time on weekdays or workdays,SLQ,lifestyle,feature_candidate,True,0.0,True,0.0,True,,no,,Clock times; sleep duration already captured
+SLQ320,Usual sleep time on weekends,SLQ,lifestyle,feature_candidate,True,0.0,True,0.0,True,,no,,Clock times; sleep duration already captured
+SLQ330,Usual wake time on weekends,SLQ,lifestyle,feature_candidate,True,0.0,True,0.0,True,,no,,Clock times; sleep duration already captured
+SMAQUEX2,Questionnaire Mode Flag,SMQ,lifestyle,feature_candidate,True,0.0,True,0.0,True,,no,,Questionnaire mode flag
+SMD030,Age started smoking cigarettes regularly,SMQ,lifestyle,feature_candidate,True,58.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD057,# cigarettes smoked per day when quit,SMQ,lifestyle,feature_candidate,True,76.2,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD100FL,Cigarette Filter type,SMQ,lifestyle,feature_candidate,True,83.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD100MN,Cigarette Menthol indicator,SMQ,lifestyle,feature_candidate,True,83.0,True,85.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD630,Age first smoked whole cigarette,SMQ,lifestyle,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD641,# days smoked cigs during past 30 days,SMQ,lifestyle,feature_candidate,True,82.0,True,96.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMD650,Avg # cigarettes/day during past 30 days,SMQ,lifestyle,feature_candidate,True,82.2,True,85.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMQ020,Smoked at least 100 cigarettes in life,SMQ,lifestyle,feature_candidate,True,0.0,True,0.2,True,,derive,smoking_status,"never (SMQ020 = 2) / former (SMQ040 = 3) / current (SMQ040 = 1 or 2). SMQ040 'missing' is skip logic, not data loss"
+SMQ040,Do you now smoke cigarettes?,SMQ,lifestyle,feature_candidate,True,58.3,True,58.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,derive,smoking_status,"never (SMQ020 = 2) / former (SMQ040 = 3) / current (SMQ040 = 1 or 2). SMQ040 'missing' is skip logic, not data loss"
+SMQ050Q,How long since quit smoking cigarettes,SMQ,lifestyle,feature_candidate,True,76.2,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMQ050U,Unit of measure (day/week/month/year),SMQ,lifestyle,feature_candidate,True,77.8,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMQ078,How soon after waking do you smoke,SMQ,lifestyle,feature_candidate,True,86.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMQ621,Cigarettes smoked in entire life,SMQ,lifestyle,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+SMQ670,Tried to quit smoking,SMQ,lifestyle,feature_candidate,True,82.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+ALQ111,Ever had a drink of any kind of alcohol,ALQ,lifestyle,feature_candidate,True,13.6,True,32.9,True,,derive,drinking_freq,Past-12-month frequency; 0 if never drank (ALQ111 = 2). Labels reworded only; check codes match in the docs
+ALQ121,Past 12 mo how often drink alcoholic bev,ALQ,lifestyle,feature_candidate,True,21.6,True,38.9,True,label differs between cycles: Past 12 mo how often drink alcoholic bev | Past 12 mos how often drink alc bev,derive,drinking_freq,Past-12-month frequency; 0 if never drank (ALQ111 = 2). Labels reworded only; check codes match in the docs
+ALQ130,Avg # alcoholic drinks/day - past 12 mos,ALQ,lifestyle,feature_candidate,True,39.1,True,49.5,True,label differs between cycles: Avg # alcoholic drinks/day - past 12 mos | Avg # alcoholic drinks/day/past 12 mos,derive,drinks_per_day,"Drinks per drinking day; 0 for non-drinkers. Asked in MEC, so it covers examined adults only"
+ALQ142,# days have 4 or 5 drinks/past 12 mos,ALQ,lifestyle,feature_candidate,True,39.1,True,49.4,True,label differs between cycles: # days have 4 or 5 drinks/past 12 mos | # days have 4/5 drinks/past 12 mos,no,,"Binge-drinking detail; skip logic, high missingness"
+ALQ151,Ever have 4/5 or more drinks every day?,ALQ,lifestyle,feature_candidate,True,21.7,True,39.1,True,label differs between cycles: Ever have 4/5 or more drinks every day? | Ever have 4/5 or more drinks every day,no,,"Binge-drinking detail; skip logic, high missingness"
+ALQ170,Past 30 days # times 4-5 drinks on an oc,ALQ,lifestyle,feature_candidate,True,39.3,True,71.0,True,>= 50% missing in 2021-2023; label differs between cycles: Past 30 days # times 4-5 drinks on an oc | # times 4/5 drinks on occasion/past mo,no,,"Binge-drinking detail; skip logic, high missingness"
+ALQ270,# times 4-5 drinks in 2hrs/past 12 mos,ALQ,lifestyle,feature_candidate,True,74.4,True,70.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023; label differs between cycles: # times 4-5 drinks in 2hrs/past 12 mos | # times 4/5 drinks in 2hrs/past 12 mos,no,,"Binge-drinking detail; skip logic, high missingness"
+ALQ280,# times 8+ drinks in 1 day/past 12 mos,ALQ,lifestyle,feature_candidate,True,74.4,True,70.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,"Binge-drinking detail; skip logic, high missingness"
+ALQ290,# times 12+ drinks in 1 day/past 12 mos,ALQ,lifestyle,feature_candidate,True,90.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,"Binge-drinking detail; skip logic, high missingness"
+BPD035,Age told had hypertension,BPQ,clinical,feature_candidate,True,61.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ020,Ever told you had high blood pressure,BPQ,clinical,feature_candidate,True,0.0,True,0.0,True,,yes,told_high_bp,
+BPQ030,Told had high blood pressure - 2+ times,BPQ,clinical,feature_candidate,True,61.4,True,62.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ040A,Taking prescription for hypertension,BPQ,clinical,feature_candidate,True,61.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ050A,Now taking prescribed medicine for HBP,BPQ,clinical,feature_candidate,True,64.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ060,Ever had blood cholesterol checked,BPQ,clinical,feature_candidate,True,35.3,False,,False,not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ070,When blood cholesterol last checked,BPQ,clinical,feature_candidate,True,21.5,False,,False,not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ080,Doctor told you - high cholesterol level,BPQ,clinical,feature_candidate,True,0.0,True,0.0,True,,yes,told_high_cholesterol,
+BPQ090D,Told to take prescriptn for cholesterol,BPQ,clinical,feature_candidate,True,21.5,False,,False,not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ100D,Now taking prescribed medicine,BPQ,clinical,feature_candidate,True,70.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ101D,Taking meds to lower blood cholesterol?,BPQ,clinical,feature_candidate,False,,True,0.0,False,not in 2017-2020,no,,Follow-up and medication items; renamed or re-routed between cycles
+BPQ150,Taking high blood pressure medication,BPQ,clinical,feature_candidate,False,,True,62.3,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Follow-up and medication items; renamed or re-routed between cycles
+AGQ030,Did SP have episode of hay fever/past yr,MCQ,clinical,feature_candidate,True,56.8,True,0.0,True,>= 50% missing in 2017-2020,no,,Not needed for the research questions or not usable in both cycles
+MCD093,Year receive blood transfusion,MCQ,clinical,feature_candidate,True,88.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180B,Age when told you had heart failure,MCQ,clinical,feature_candidate,True,96.1,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180C,Age when told had coronary heart disease,MCQ,clinical,feature_candidate,True,95.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180D,Age when told you had angina pectoris,MCQ,clinical,feature_candidate,True,97.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180E,Age when told you had heart attack,MCQ,clinical,feature_candidate,True,95.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180F,Age when told you had a stroke,MCQ,clinical,feature_candidate,True,94.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180L,Age when told you had a liver condition,MCQ,clinical,feature_candidate,True,95.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCD180M,Age when told you had thyroid problem,MCQ,clinical,feature_candidate,True,88.3,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ010,Ever been told you have asthma,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ025,Age when first had asthma,MCQ,clinical,feature_candidate,True,84.4,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ035,Still have asthma,MCQ,clinical,feature_candidate,True,84.4,True,81.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ040,Had asthma attack in past year,MCQ,clinical,feature_candidate,True,90.6,True,88.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ050,Emergency care visit for asthma/past yr,MCQ,clinical,feature_candidate,True,90.6,True,88.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ053,Taking treatment for anemia/past 3 mos,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ080,Doctor ever said you were overweight,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Not in 2021-2023; overlaps with BMI
+MCQ092,Ever receive blood transfusion,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ149,Menstrual periods started yet?,MCQ,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ151,Age in years at first menstrual period,MCQ,clinical,feature_candidate,True,100.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ160A,Doctor ever said you had arthritis,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ160B,Ever told had congestive heart failure,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,derive,history_cvd,"Any of heart failure, CHD, angina, heart attack, stroke"
+MCQ160C,Ever told you had coronary heart disease,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,derive,history_cvd,"Any of heart failure, CHD, angina, heart attack, stroke"
+MCQ160D,Ever told you had angina/angina pectoris,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,derive,history_cvd,"Any of heart failure, CHD, angina, heart attack, stroke"
+MCQ160E,Ever told you had heart attack,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,derive,history_cvd,"Any of heart failure, CHD, angina, heart attack, stroke"
+MCQ160F,Ever told you had a stroke,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,derive,history_cvd,"Any of heart failure, CHD, angina, heart attack, stroke"
+MCQ160L,Ever told you had any liver condition,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,yes,told_liver_condition,Fatty liver is common with diabetes; watch in the leakage screen
+MCQ160M,Ever told you had thyroid problem,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ160P,"Ever told you had COPD, emphysema, ChB",MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ170L,Do you still have a liver condition,MCQ,clinical,feature_candidate,True,95.0,True,94.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ170M,Do you still have thyroid problem,MCQ,clinical,feature_candidate,True,88.3,True,86.5,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ195,Which type of arthritis was it?,MCQ,clinical,feature_candidate,True,69.5,True,67.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ220,Ever told you had cancer or malignancy,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ230A,1st cancer - what kind was it?,MCQ,clinical,feature_candidate,True,89.1,True,85.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ230B,2nd cancer - what kind was it?,MCQ,clinical,feature_candidate,True,98.8,True,98.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ230C,3rd cancer - what kind was it?,MCQ,clinical,feature_candidate,True,99.8,True,99.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ230D,More than 3 kinds of cancer,MCQ,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ300A,Close relative had heart attack?,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ300B,Close relative had asthma?,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ300C,Close relative had diabetes?,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Family history of diabetes: strong predictor but not in 2021-2023. Option: keep for the main analysis only and run the temporal check without it
+MCQ366A,Doctor told you to control/lose weight,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ366B,Doctor told you to exercise,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ366C,Doctor told you to reduce salt in diet,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ366D,Doctor told you to reduce fat/calories,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ371A,Are you now controlling or losing weight,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ371B,Are you now increasing exercise,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ371C,Are you now reducing salt in diet,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ371D,Are you now reducing fat in diet,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,LEAKAGE risk (doctor advice / behaviour change can follow a diagnosis) and not in 2021-2023
+MCQ500,Ever told you had any liver condition,MCQ,clinical,feature_candidate,True,100.0,True,100.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510A,Liver condition: Fatty liver,MCQ,clinical,feature_candidate,True,97.5,True,96.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510B,Liver condition: Liver fibrosis,MCQ,clinical,feature_candidate,True,99.9,True,99.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510C,Liver condition: Liver cirrhosis,MCQ,clinical,feature_candidate,True,99.6,True,99.4,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510D,Liver condition: Viral hepatitis,MCQ,clinical,feature_candidate,True,99.1,True,99.2,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510E,Liver condition: Autoimmune hepatitis,MCQ,clinical,feature_candidate,True,99.8,True,99.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ510F,Liver condition: Other liver disease,MCQ,clinical,feature_candidate,True,98.8,True,99.0,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ520,Abdominal pain during past 12 months?,MCQ,clinical,feature_candidate,True,0.0,False,,False,not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ530,Where was the most uncomfortable pain,MCQ,clinical,feature_candidate,True,78.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ540,Ever seen a DR about this pain,MCQ,clinical,feature_candidate,True,78.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+MCQ550,Has DR ever said you have gallstones,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ560,Ever had gallbladder surgery?,MCQ,clinical,feature_candidate,True,0.0,True,0.0,True,,no,,Not needed for the research questions or not usable in both cycles
+MCQ570,Age when 1st had gallbladder surgery?,MCQ,clinical,feature_candidate,True,88.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+OSQ230,Any metal objects inside your body?,MCQ,clinical,feature_candidate,True,30.3,True,26.7,True,,no,,Not needed for the research questions or not usable in both cycles
+RHD018,Estimated age in months at menarche,MCQ,clinical,feature_candidate,True,100.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Not needed for the research questions or not usable in both cycles
+LBXGH,Glycohemoglobin (%),GHB,target,target,True,12.5,True,26.1,True,,target,diabetes,diabetes = LBXGH >= 6.5; never a feature
+WTPH2YR,Phlebotomy 2 Year Weight,GHB,target,weight,False,,True,22.3,False,not in 2017-2020,weight,wt_lab,2021-2023 phlebotomy weight; CDC recommends it for lab analytes (HbA1c) in that cycle. 2017-2020 uses WTMECPRP
+DID040,Age when first told you had diabetes,DIQ,leakage,leakage_check,True,84.6,True,86.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID060,How long taking insulin,DIQ,leakage,leakage_check,True,95.5,True,95.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID250,Past year how many times seen doctor,DIQ,leakage,leakage_check,True,88.2,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID260,How often check blood for glucose/sugar,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID310D,What does Dr say DBP should be,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID310S,What does Dr say SBP should be,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID320,What was most recent LDL number,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID330,What does Dr say LDL should be,DIQ,leakage,leakage_check,True,85.5,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID341,Past year times Dr check feet for sores,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DID350,How often do you check your feet,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ010,Doctor told you have diabetes,DIQ,leakage,leakage_check,True,0.0,True,0.0,True,,leakage_check,,Diagnosed diabetes: compare with the HbA1c outcome; never a feature
+DIQ050,Taking insulin now,DIQ,leakage,leakage_check,True,84.6,True,86.3,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,leakage_check,,"Insulin / diabetes pills, both cycles: used to identify treated diabetes (outcome limitation)"
+DIQ060U,Unit of measure (month/year),DIQ,leakage,leakage_check,True,95.6,True,95.8,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ070,Take diabetic pills to lower blood sugar,DIQ,leakage,leakage_check,True,71.9,True,71.6,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,leakage_check,,"Insulin / diabetes pills, both cycles: used to identify treated diabetes (outcome limitation)"
+DIQ080,Diabetes affected eyes/had retinopathy,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ160,Ever told you have prediabetes,DIQ,leakage,leakage_check,True,18.2,True,17.2,True,,no,,LEAKAGE: prediabetes diagnosis / recent blood test track the outcome
+DIQ180,Had blood tested past three years,DIQ,leakage,leakage_check,True,15.4,True,13.7,True,,no,,LEAKAGE: prediabetes diagnosis / recent blood test track the outcome
+DIQ230,How long ago saw a diabetes specialist,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ240,Is there one Dr you see for diabetes,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ260U,Unit of measure (day/week/month/year),DIQ,leakage,leakage_check,True,87.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ275,Past year Dr checked for A1C,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ280,What was your last A1C level,DIQ,leakage,leakage_check,True,87.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ291,What does Dr say A1C should be,DIQ,leakage,leakage_check,True,87.0,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ300D,What was your recent DBP,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ300S,What was your recent SBP,DIQ,leakage,leakage_check,True,84.7,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ350U,Unit of measure (day/week/month/year),DIQ,leakage,leakage_check,True,87.5,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+DIQ360,Last time had pupils dilated for exam,DIQ,leakage,leakage_check,True,84.6,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDCOUNT,Number of prescription medicines taken,RXQ_RX,leakage,leakage_check,True,40.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDDAYS,Number of days taken medicine,RXQ_RX,leakage,leakage_check,True,41.2,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDDRGID,Generic drug code,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,leakage_check,,"Drug names, 2017-2020 only (2021-2023 file has no drug names): optional check for diabetes drugs"
+RXDDRUG,Generic drug name,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,leakage_check,,"Drug names, 2017-2020 only (2021-2023 file has no drug names): optional check for diabetes drugs"
+RXDRSC1,ICD-10-CM code 1,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDRSC2,ICD-10-CM code 2,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDRSC3,ICD-10-CM code 3,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDRSD1,ICD-10-CM code 1 description,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDRSD2,ICD-10-CM code 2 description,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDRSD3,ICD-10-CM code 3 description,RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXDUSE,"Taken prescription medicine, past month",RXQ_RX,leakage,leakage_check,True,0.0,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+RXQ033,"Taken prescription medicine, past month",RXQ_RX,leakage,leakage_check,False,,True,0.3,False,not in 2017-2020,no,,Diabetes follow-up / medication detail; not needed
+RXQ050,Number of prescription medicines taken,RXQ_RX,leakage,leakage_check,False,,True,31.9,False,not in 2017-2020,no,,Diabetes follow-up / medication detail; not needed
+RXQSEEN,Medicine container seen by interviewer,RXQ_RX,leakage,leakage_check,True,41.2,False,,False,not in 2021-2023,no,,Diabetes follow-up / medication detail; not needed
+LBDGLUSI,Fasting Glucose (mmol/L),GLU,leakage,leakage_check,True,56.6,True,58.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Unit duplicates / comment code
+LBXGLU,Fasting Glucose (mg/dL),GLU,leakage,leakage_check,True,56.6,True,58.9,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,leakage_check,,Fasting subsample; used only in the single-feature AUC leakage screen
+WTSAF2YR,Fasting Subsample 2 Year MEC Weight,GLU,leakage,weight,False,,True,56.1,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Fasting-subsample weight; fasting variables are not used as features
+WTSAFPRP,Fasting Subsample Weight,GLU,leakage,weight,True,53.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Fasting-subsample weight; fasting variables are not used as features
+LBDINLC,Insulin Comment Code,INS,leakage,leakage_check,True,57.6,True,60.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Unit duplicates / comment code
+LBDINSI,Insulin (pmol/L),INS,leakage,leakage_check,True,57.6,True,60.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023,no,,Unit duplicates / comment code
+LBXIN,Insulin (µU/mL),INS,leakage,leakage_check,True,57.6,True,60.7,True,>= 50% missing in 2017-2020; >= 50% missing in 2021-2023; label differs between cycles: Insulin (µU/mL) | Insulin (uU/mL),leakage_check,,Fasting subsample; used only in the single-feature AUC leakage screen
+WTSAF2YR,Fasting Subsample 2 Year MEC Weight,INS,leakage,weight,False,,True,56.1,False,not in 2017-2020; >= 50% missing in 2021-2023,no,,Fasting-subsample weight; fasting variables are not used as features
+WTSAFPRP,Fasting Subsample Weight,INS,leakage,weight,True,53.9,False,,False,>= 50% missing in 2017-2020; not in 2021-2023,no,,Fasting-subsample weight; fasting variables are not used as features
