@@ -1,0 +1,12 @@
+diabetes,diagnosed,treated,n,pct_of_cohort
+0,diagnosed,not treated,121,1.2758329818641923
+0,diagnosed,treated,299,3.152678194854492
+0,not diagnosed,not asked / unknown,6556,69.1269506537326
+0,not diagnosed,not treated,1143,12.051876845212991
+0,not diagnosed,treated,74,0.780261493040911
+0,unknown,not asked / unknown,1,0.010544074230282582
+1,diagnosed,not treated,87,0.9173344580345846
+1,diagnosed,treated,911,9.605651623787432
+1,not diagnosed,not asked / unknown,130,1.3707296499367356
+1,not diagnosed,not treated,114,1.2020244622522143
+1,not diagnosed,treated,48,0.5061155630535639

@@ -60,3 +60,14 @@ def test_eda_tables_run_on_synthetic_data():
     assert set(biv["feature"]) == set(feature_list())
     _, _, vif = eda.collinearity(df)
     assert (vif["vif"] > 0.9).all()
+
+
+def test_leakage_screen_flags_a_proxy_but_not_noise():
+    from t2d import leakage
+    df = _cohort(3000, seed=1)
+    rng = np.random.default_rng(2)
+    df["proxy"] = df["diabetes"] + rng.normal(0, 0.05, len(df))   # near-perfect proxy
+    auc = leakage.single_feature_auc(df, ["proxy", "bmi", "sex"]).set_index("feature")
+    assert auc.loc["proxy", "flag"] == "LEAK"
+    assert auc.loc["bmi", "flag"] == "ok" and auc.loc["sex", "flag"] == "ok"
+    assert 0.4 < auc.loc["bmi", "auc"] < 0.6

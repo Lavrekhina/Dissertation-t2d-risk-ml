@@ -1,0 +1,43 @@
+feature,group,single_feature_auc,auc_flag,review,note,decision
+age,demographic,0.6658316824751709,ok,ok,,keep
+sex,demographic,0.5202374870627591,ok,ok,,keep
+race_ethnicity,demographic,0.5571069680405213,ok,ok,,keep
+education,demographic,0.5972340320862495,ok,ok,,keep
+marital_status,demographic,0.5499302760764635,ok,ok,,keep
+income_poverty_ratio,demographic,0.5547706962742639,ok,ok,,keep
+born_in_us,demographic,0.521995201631748,ok,ok,,keep
+bmi,clinical,0.657346224217758,ok,treatment,weight loss advice / GLP-1 drugs after diagnosis,keep
+waist_cm,clinical,0.6939352485180119,ok,treatment,as BMI,keep
+height_cm,clinical,0.509158100179182,ok,ok,,keep
+waist_hip_ratio,clinical,0.7058404429030127,ok,treatment,as BMI,keep
+sbp_mean,clinical,0.604188165664799,ok,treatment,antihypertensives are common in diabetes,keep
+dbp_mean,clinical,0.5085143601008868,ok,treatment,as SBP,keep
+pulse_mean,clinical,0.6034240879599935,ok,ok,,keep
+hdl_mg_dl,clinical,0.6582437423488164,ok,ok,"lowered by insulin resistance (a cause, not leakage)",keep
+total_chol_mg_dl,clinical,0.5928912344634852,ok,treatment,statins after diagnosis (EDA: 167 vs 188 mg/dL),keep
+told_high_bp,clinical,0.6589984541534456,ok,contact,diagnosed with diabetes -> more BP checks,keep
+told_high_cholesterol,clinical,0.6272969633670316,ok,contact,as above,keep
+history_cvd,clinical,0.5700461483445063,ok,contact,complication and risk factor,keep
+told_liver_condition,clinical,0.5238550423546818,ok,contact,fatty liver is linked to diabetes; watch AUC,keep
+leisure_mvpa_min_week,lifestyle,0.5957868112988707,ok,treatment,advice to exercise (EDA: 0 vs 30 min/wk),keep
+sedentary_min_day,lifestyle,0.4921442329706176,ok,ok,,keep
+sleep_hours,lifestyle,0.5123372556588012,ok,ok,,keep
+smoking_status,lifestyle,0.5225028050398004,ok,ok,,keep
+drinking_freq,lifestyle,0.6199199452047537,ok,treatment,advice to cut alcohol (EDA: lower in diagnosed),keep
+drinks_per_day,lifestyle,0.59183113755007,ok,treatment,as above,keep
+energy_kcal,diet,0.5509070259388132,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+protein,diet,0.5479379409778,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+carbohydrate,diet,0.5075286700610959,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+total_sugars,diet,0.5376048933517246,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+fibre,diet,0.5330927999878905,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+total_fat,diet,0.5407713717543372,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+sat_fat,diet,0.5333362660899543,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+mufa,diet,0.5355941102678647,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+pufa,diet,0.5200652112625422,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+diet_cholesterol,diet,0.5506910899069654,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+sodium,diet,0.5708153820246616,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+potassium,diet,0.5354442085625141,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+magnesium,diet,0.5148694071858214,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+calcium,diet,0.5101521627661003,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+caffeine,diet,0.49382820290134777,ok,treatment,dietary advice after diagnosis (EDA §5),keep
+alcohol_g,diet,0.572831936016711,ok,treatment,dietary advice after diagnosis (EDA §5),keep

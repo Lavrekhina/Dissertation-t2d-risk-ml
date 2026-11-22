@@ -1,0 +1,7 @@
+model,cv_auc
+all model features,0.8357989302060688
++ hba1c,1.0
++ chk_fasting_glucose,0.9095900195454039
++ chk_fasting_insulin,0.8394966632798057
++ chk_diagnosed_diabetes,0.9294619999886474
++ chk_treated_diabetes,0.9351644141203715
