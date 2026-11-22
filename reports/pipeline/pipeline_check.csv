@@ -1,0 +1,13 @@
+feature_set,imputer,model,n_input,n_output_columns,nan_after_prep,cv_auc_mean,cv_auc_sd,seconds
+clinical,median,logistic (linear prep),21,30,0,0.8376146447474682,0.007051625607897714,0.2
+clinical,median,hist gradient boosting (tree prep),21,30,0,0.8236613596532436,0.008102120649451776,3.4
+clinical,iterative,logistic (linear prep),21,30,0,0.8389936229018483,0.007912446219176986,3.6
+clinical,iterative,hist gradient boosting (tree prep),21,30,0,0.8245131756369466,0.010505070507478528,6.2
+clinical+lifestyle,median,logistic (linear prep),27,39,0,0.8392785035519544,0.0054046746360576076,0.3
+clinical+lifestyle,median,hist gradient boosting (tree prep),27,39,0,0.8278661571622395,0.003096203168519807,3.1
+clinical+lifestyle,iterative,logistic (linear prep),27,39,0,0.8403755101819718,0.0063840175949418645,3.8
+clinical+lifestyle,iterative,hist gradient boosting (tree prep),27,39,0,0.8268205731917296,0.00815416983221971,5.8
+all,median,logistic (linear prep),42,54,0,0.8427561885420477,0.008427727229918582,0.3
+all,median,hist gradient boosting (tree prep),42,54,0,0.8349596616726318,0.0054823745118479875,3.7
+all,iterative,logistic (linear prep),42,54,0,0.8439449066965846,0.008936278941357501,15.1
+all,iterative,hist gradient boosting (tree prep),42,54,0,0.8324846343731938,0.008570518689586306,32.9
