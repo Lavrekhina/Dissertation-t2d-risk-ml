@@ -1,0 +1,8 @@
+feature_1,feature_2,spearman_rho
+bmi,waist_cm,0.9065798228462701
+total_fat,mufa,0.8685301725398491
+potassium,magnesium,0.7445260475976677
+drinking_freq,drinks_per_day,0.7221584736388852
+total_fat,sat_fat,0.7090787060671612
+fibre,magnesium,0.7038181103289786
+carbohydrate,total_fat,-0.7031168410977083
