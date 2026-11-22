@@ -1,0 +1,66 @@
+column,group,dtype,pct_missing,pct_missing_2017-2020,pct_missing_2021-2023
+SEQN,id/meta,int64,0.0,0.0,0.0
+cycle,id/meta,str,0.0,0.0,0.0
+hba1c,LEAKAGE CHECK - never a feature,float64,0.0,0.0,0.0
+diabetes,target,Int8,0.0,0.0,0.0
+age,demographic,float64,0.0,0.0,0.0
+sex,demographic,string,0.0,0.0,0.0
+race_ethnicity,demographic,string,0.0,0.0,0.0
+education,demographic,float64,0.1,0.1,0.0
+marital_status,demographic,string,0.1,0.1,0.0
+income_poverty_ratio,demographic,float64,12.0,12.3,11.4
+born_in_us,demographic,float64,0.0,0.1,0.0
+bmi,clinical,float64,1.0,1.1,0.9
+height_cm,clinical,float64,0.8,1.0,0.6
+waist_cm,clinical,float64,3.0,2.8,3.2
+waist_hip_ratio,clinical,float64,3.4,3.0,3.9
+sbp_mean,clinical,float64,4.9,6.6,2.1
+dbp_mean,clinical,float64,4.9,6.6,2.1
+pulse_mean,clinical,float64,10.0,14.9,2.1
+hdl_mg_dl,clinical,float64,3.0,2.1,4.4
+total_chol_mg_dl,clinical,float64,3.0,2.1,4.4
+told_high_bp,clinical,float64,0.1,0.1,0.1
+told_high_cholesterol,clinical,float64,0.6,0.7,0.5
+history_cvd,clinical,float64,0.0,0.0,0.0
+told_liver_condition,clinical,float64,0.2,0.2,0.0
+smoking_status,lifestyle,string,0.1,0.1,0.2
+drinking_freq,lifestyle,float64,5.0,2.6,8.8
+drinks_per_day,lifestyle,float64,5.2,2.7,9.2
+leisure_mvpa_min_week,lifestyle,float64,0.5,0.2,1.0
+sedentary_min_day,lifestyle,float64,0.7,0.8,0.6
+sleep_hours,lifestyle,float64,1.2,1.2,1.1
+diet_recall_days,id/meta,int64,0.0,0.0,0.0
+energy_kcal,diet,float64,0.0,0.0,0.0
+carbohydrate,diet,float64,0.0,0.0,0.0
+total_sugars,diet,float64,0.0,0.0,0.0
+fibre,diet,float64,0.0,0.0,0.0
+total_fat,diet,float64,0.0,0.0,0.0
+sat_fat,diet,float64,0.0,0.0,0.0
+mufa,diet,float64,0.0,0.0,0.0
+pufa,diet,float64,0.0,0.0,0.0
+protein,diet,float64,0.0,0.0,0.0
+diet_cholesterol,diet,float64,0.0,0.0,0.0
+sodium,diet,float64,0.0,0.0,0.0
+potassium,diet,float64,0.0,0.0,0.0
+calcium,diet,float64,0.0,0.0,0.0
+magnesium,diet,float64,0.0,0.0,0.0
+caffeine,diet,float64,0.0,0.0,0.0
+alcohol_g,diet,float64,0.0,0.0,0.0
+qc_energy_implausible,qc flag,Int8,0.0,0.0,0.0
+qc_day1_not_usual,qc flag,Int8,0.3,0.4,0.3
+chk_diagnosed_diabetes,LEAKAGE CHECK - never a feature,float64,0.0,0.0,0.0
+chk_insulin,LEAKAGE CHECK - never a feature,float64,85.0,84.4,85.8
+chk_diabetes_pills,LEAKAGE CHECK - never a feature,float64,70.4,71.2,69.2
+chk_treated_diabetes,LEAKAGE CHECK - never a feature,float64,70.4,71.2,69.1
+chk_fasting_glucose,LEAKAGE CHECK - never a feature,float64,47.9,50.3,44.1
+chk_fasting_insulin,LEAKAGE CHECK - never a feature,float64,49.5,51.4,46.5
+psu,weight/design,float64,0.0,0.0,0.0
+strata,weight/design,str,0.0,0.0,0.0
+wt_mec,weight/design,float64,0.0,0.0,0.0
+wt_lab,weight/design,float64,0.0,0.0,0.0
+wt_diet1,weight/design,float64,0.0,0.0,0.0
+wt_diet2,weight/design,float64,0.0,0.0,0.0
+wt_mec_pooled,weight/design,float64,0.0,0.0,0.0
+wt_lab_pooled,weight/design,float64,0.0,0.0,0.0
+wt_diet1_pooled,weight/design,float64,0.0,0.0,0.0
+wt_diet2_pooled,weight/design,float64,0.0,0.0,0.0

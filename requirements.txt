@@ -12,3 +12,4 @@ seaborn>=0.13
 jupyter>=1.0
 ipykernel>=6.29
 pytest>=8.0
+pyarrow>=15

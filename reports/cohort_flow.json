@@ -1,0 +1,73 @@
+[
+  {
+    "step": "All NHANES participants",
+    "n": 27493,
+    "2017-2020": 15560,
+    "2021-2023": 11933,
+    "excluded": null
+  },
+  {
+    "step": "Excluded: Aged under 20",
+    "excluded": {
+      "n": 10452,
+      "2017-2020": 6328,
+      "2021-2023": 4124
+    },
+    "n": 17041,
+    "2017-2020": 9232,
+    "2021-2023": 7809
+  },
+  {
+    "step": "Excluded: Interviewed only, not examined",
+    "excluded": {
+      "n": 2433,
+      "2017-2020": 688,
+      "2021-2023": 1745
+    },
+    "n": 14608,
+    "2017-2020": 8544,
+    "2021-2023": 6064
+  },
+  {
+    "step": "Excluded: Pregnant at examination",
+    "excluded": {
+      "n": 128,
+      "2017-2020": 87,
+      "2021-2023": 41
+    },
+    "n": 14480,
+    "2017-2020": 8457,
+    "2021-2023": 6023
+  },
+  {
+    "step": "Excluded: No valid HbA1c result",
+    "excluded": {
+      "n": 745,
+      "2017-2020": 452,
+      "2021-2023": 293
+    },
+    "n": 13735,
+    "2017-2020": 8005,
+    "2021-2023": 5730
+  },
+  {
+    "step": "Excluded: No reliable day-1 dietary recall",
+    "excluded": {
+      "n": 1881,
+      "2017-2020": 718,
+      "2021-2023": 1163
+    },
+    "n": 11854,
+    "2017-2020": 7287,
+    "2021-2023": 4567
+  },
+  {
+    "step": "Analytic cohort",
+    "n": 11854,
+    "2017-2020": 7287,
+    "2021-2023": 4567,
+    "excluded": null,
+    "diabetes_cases": 1612,
+    "prevalence_unweighted": 0.136
+  }
+]
